@@ -4,8 +4,17 @@
 
 
 ## Принцип работы кода
-
+	
+  .....
+  ....
+  ...
+  ....
+  .... 
+  Для наглядности я сделал блок схему, которая поможет вам лучше понять логику работы кода
+	
  ![Code scheme](https://github.com/Timofei1412/Autopilot/blob/main/Readme_photos/Code%20scheme.jpg)
+ *в [папке](https://github.com/Timofei1412/Autopilot/blob/main/Readme_photos/) есть файл с большим разрешением.
+ 
 
 ## Сборка проекта
   - Купите указанные компоненты:
