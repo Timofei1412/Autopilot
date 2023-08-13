@@ -12,7 +12,7 @@ GButton butt1(BTN_PIN);
 #define PitchPin 10
 #define RollPin 8
 #define YawPin 9
-#define AddPin 13
+#define AddPin 11
 
 
 //Gyroscope is connected to pins  A4 and A5 relative to SDA and SCL on gyroscope

@@ -3,7 +3,7 @@
 SoftServo ServoPitch;  // Y
 SoftServo ServoRoll;   // x
 SoftServo ServoYaw;    // z
-SoftServo ServoAdd;    // Additional servo (For any other purpose)
+SoftServo ServoEng;    // Additional servo (For any other purpose)
 
 
 void ServoSetup() {
@@ -11,12 +11,12 @@ void ServoSetup() {
   ServoPitch.attach(PitchPin);
   ServoRoll.attach(RollPin);
   ServoYaw.attach(YawPin);
-  ServoAdd.attach(AddPin);
+  ServoEng.attach(EngPin);
   // Make async mode to get rid of delays
   ServoPitch.asyncMode();
   ServoRoll.asyncMode();
   ServoYaw.asyncMode();
-  ServoAdd.asyncMode();
+  ServoEng.asyncMode();
 }
 
 void servoTick() {
@@ -51,7 +51,7 @@ void indServoAngle(int angle, uint8_t servoType) {
       }
     case 3:
       {
-        ServoAdd.write(angle);
+        ServoEng.write(angle);
         break;
       }
   }
