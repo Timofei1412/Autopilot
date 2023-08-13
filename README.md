@@ -5,7 +5,7 @@
 
 ## Принцип работы кода
 
- ![Code scheme](/Readme_photos/Code scheme.jpg)
+ ![Code scheme](https://github.com/Timofei1412/Autopilot/blob/main/Readme_photos/Code%20scheme.jpg)
 
 ## Сборка проекта
   - Купите указанные компоненты:
