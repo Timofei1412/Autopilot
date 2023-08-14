@@ -51,10 +51,11 @@
   - Скачайте [папку с  библиотеками](/libraries)  и добавьте их в папку C:\Users\Админ\Documents\Arduino\libraries.
 	
   - Скачайте и откройте файлы прошивки : [прошивка самолетной части](/Plane_Code), [прошивка передающей части](/Transmitter_code).
-  ![Open code files](/Readme_photos/Файл%20прошивки.jpg)
+  
   
   - Подключите плату к компьютеру. 
   - Нажав на прямоугольник сверху, надите плату Arduino Nano  и порт, в который она подключена(для меня это порт 11).
+  ![Open code files](/Readme_photos/Файл%20прошивки.jpg)
   ![Choice of board and port](/Readme_photos/Выбор%20платы.jpg)
   - Нажмите кнопку "Компилировать".
   ![Upload](/Readme_photos/Загрузить.jpg)
