@@ -1,4 +1,4 @@
-#define Debug 1
+#define Debug 0
 #include "I2Cdev.h"
 #include <GyverButton.h>
 

@@ -31,8 +31,8 @@
 	
   Для наглядности я сделал блок схему, которая поможет вам лучше понять логику работы кода
 	
- ![Code scheme](https://github.com/Timofei1412/Autopilot/blob/main/Readme_photos/Code%20scheme.jpg)
- *в [папке](https://github.com/Timofei1412/Autopilot/blob/main/Readme_photos/) есть файл с большим разрешением.
+ ![Code scheme](/Readme_photos/Code%20scheme.jpg)
+ *в [папке](/Readme_photos) есть файл с большим разрешением.
  
  Режим полета изменяется при помощи тумблера на аппаратуре управления.
  
@@ -51,6 +51,7 @@
   - Скачайте [папку с  библиотеками](/libraries)  и добавьте их в папку C:\Users\Админ\Documents\Arduino\libraries.
 	
   - Скачайте и откройте файлы прошивки : [прошивка самолетной части](/Plane_Code), [прошивка передающей части](/Transmitter_code).
+  ![Open code files](/Readme_photos/Файл прошивки.jpg)
   
   - Подключите плату к компьютеру. 
   - Нажав на прямоугольник сверху, надите плату Arduino Nano  и порт, в который она подключена.
