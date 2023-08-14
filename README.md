@@ -21,7 +21,7 @@
   - Файл Transmitter_code содержит код передатчика, нахадящегося на земле.
 
 ## Принцип управления самолетом
-  ![Working_scheme](https://github.com/Timofei1412/Autopilot/blob/main/Readme_photos/Working_scheme.jpg)
+  ![Working_scheme](/Readme_photos/Working_scheme.jpg)
   
 ## Принцип работы кода
 	
