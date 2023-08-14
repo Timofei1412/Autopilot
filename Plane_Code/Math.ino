@@ -65,10 +65,6 @@ int ZPid(int error) {
   return constrain(int(up + ui + ud), 0, 180);
 }
 
-void countSpeed(float *ax, float *ay, float *az, int dt) {
-  globalSpeed += (*ay * 9.8) * (dt / 1000);  // accel in g`s are coverted into m/s/s and then are multipied by the time, that has gone since the last count
-}
-
 //expRunningAverage(&val, & filVal,k)
 void expRunningAverage(float *newVal, float *filVal, float k) {
   *filVal += (*newVal - *filVal) * k;
@@ -76,6 +72,10 @@ void expRunningAverage(float *newVal, float *filVal, float k) {
 
 
 /*
+
+    Funcs for gps 
+
+    
 float computePointDist(float x1, float y1, float x2, float y2) {  // Compute distance between two points
   float dist = sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
   return dist;
