@@ -1,8 +1,10 @@
+#define res 256
+
 // Registers for ADXL345
 #define ADXL345_ADDRESS (0xA6 >> 1)  // address for device
 #define ADXL345_REGISTER_XLSB (0x32)
 
-#define res 256
+
 float X_out = 0;
 float Y_out = 0;
 float Z_out = 0;
@@ -13,8 +15,6 @@ void i2c_write(int address, byte reg, byte data) {
   Wire.write(data);                 //low byte
   Wire.endTransmission();
 }
-
-
 
 
 void init_adxl345() {
@@ -45,28 +45,6 @@ void init_adxl345() {
   Wire.endTransmission();
   delay(10);
 
-
-  for (int i = 0; i < 10; i++) {
-    Wire.beginTransmission(ADXL345_ADDRESS);
-    Wire.write(0x32);  // Start with register 0x32 (ACCEL_XOUT_H)
-    Wire.endTransmission(false);
-    Wire.requestFrom(ADXL345_ADDRESS, 6, true);  // Read 6 registers total, each axis value is stored in 2 registers
-    X_out = (Wire.read() | Wire.read() << 8);    // X-axis value
-    Y_out = (Wire.read() | Wire.read() << 8);    // Y-axis value
-    Z_out = (Wire.read() | Wire.read() << 8);    // Z-axis value
-
-    Serial.print("X: ");
-    Serial.print(X_out);
-    Serial.print('\t');
-    Serial.print("Y: ");
-    Serial.print(Y_out);
-    Serial.print('\t');
-    Serial.print("Z: ");
-    Serial.print(Z_out);
-    Serial.println('\t');
-  }
-  delay(500);
-  Serial.println("--------------------------------------------------------------------------");
 }
 
 float kA = 0.2;  // коэффициент фильтрации, 0.0-1.0
