@@ -31,28 +31,41 @@ void angleWrite(int x, int y, int z) {
   ServoYaw.write(z);
 }
 
-// 0 - Pitch, 1 - Roll, 2 - Yaw, 3 - Additional Servo
-void indServoAngle(int angle, uint8_t servoType) {
-  switch (servoType) {
-    case 0:
-      {
-        ServoPitch.write(angle);
-        break;
-      }
-    case 1:
-      {
-        ServoRoll.write(angle);
-        break;
-      }
-    case 2:
-      {
-        ServoYaw.write(angle);
-        break;
-      }
-    case 3:
-      {
-        ServoEng.write(angle);
-        break;
-      }
+void Attach_servos() {
+  //if servo is not controled by the Arduino Begin controlling
+  if (~(ServoPitch.attached())) ServoPitch.attach(PitchPin);
+  if (~(ServoRoll.attached())) ServoRoll.attach(RollPin);
+  if (~(ServoYaw.attached())) ServoYaw.attach(YawPin);
+  if (~(ServoEng.attached())) ServoEng.attach(EngPin);
+}
+
+
+void Detach_servos() {
+  //If servo is controlled by Arduino Stop conrolling
+  if (ServoPitch.attached()) {
+    ServoPitch.write(90);
+    delay(100);
+    ServoPitch.detach();
+    pinMode(PitchPin, LOW);
+  }
+
+  if (ServoRoll.attached()) {
+    ServoRoll.write(90);
+    delay(100);
+    ServoRoll.detach();
+    pinMode(RollPin, LOW);
+  }
+
+  if (ServoYaw.attached()) {
+    ServoYaw.write(90);
+    delay(100);
+    ServoYaw.detach();
+    pinMode(YawPin, LOW);
+  }
+  if (ServoEng.attached()) {
+    ServoEng.write(90);
+    delay(100);
+    ServoEng.detach();
+    pinMode(EngPin, LOW);
   }
 }

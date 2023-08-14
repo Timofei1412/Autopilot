@@ -10,10 +10,9 @@ void Gyrosetup() {
   mpu.initialize();
   mpu.dmpInitialize();
   mpu.setDMPEnabled(true);
-  Serial.print("Wait!");
   mpu.CalibrateAccel(6);
   mpu.CalibrateGyro(6);
-  Serial.println("GO");
+
 }
 
 // Прередавать &ax,&ay,&az
@@ -28,12 +27,6 @@ void getInfo(float *rx, float *ry, float *rz) {
     mpu.dmpGetGravity(&gravity, &q);
     mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
 
-    // Serial.print(degrees(ypr[2]));  // вокруг оси X
-    // Serial.print('\t');
-    // Serial.print(degrees(ypr[1]));  // вокруг оси Y
-    // Serial.print('\t');
-    // Serial.print(degrees(ypr[0]));  // вокруг оси Z
-    // Serial.print('\t');
     *rx = degrees(ypr[2]);
     *ry = degrees(ypr[1]);
     *rz = degrees(ypr[0]);
