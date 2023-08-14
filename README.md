@@ -22,6 +22,10 @@
 
 ## Принцип управления самолетом
   ![Working_scheme](/Readme_photos/Working_scheme.jpg)
+  Для ручного управления и переключения режима полета используется аппаратура FlySky I6 с приемником FlySky I6A.
+  Для изменения коэффициентов и параметров автопилота используется контроллер Arduino Nano и передатчик RF 315, работающий на частоте 433 МГц
+  
+  
   
 ## Принцип работы кода
 	
@@ -29,6 +33,8 @@
 	
  ![Code scheme](https://github.com/Timofei1412/Autopilot/blob/main/Readme_photos/Code%20scheme.jpg)
  *в [папке](https://github.com/Timofei1412/Autopilot/blob/main/Readme_photos/) есть файл с большим разрешением.
+ 
+ Режим полета изменяется при помощи тумблера на аппаратуре управления.
  
 
 ## Сборка проекта
