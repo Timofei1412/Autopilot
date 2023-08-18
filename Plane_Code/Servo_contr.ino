@@ -30,7 +30,10 @@ void angleWrite(int x, int y, int z) {
   ServoRoll.write(y);
   ServoYaw.write(z);
 }
+bool qw(){
+ return ServoPitch.attached();
 
+}
 void Attach_servos() {
   //if servo is not controled by the Arduino Begin controlling
   if (~(ServoPitch.attached())) ServoPitch.attach(PitchPin);

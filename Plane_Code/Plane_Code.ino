@@ -41,17 +41,15 @@ bool flightFlag = true;
 //-Main Setup-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #include "I2Cdev.h"
-#include <GyverButton.h>
-
 #include "Led.h"
 
 
 void setup() {
   Serial.begin(115200);  // Setup of main usb port for debug
-  
-  LedSetup();  //Setup of RGB led strip
+
+  LedSetup();      //Setup of RGB led strip
   Gyrosetup();     // Setup of Gyroscope
-  ServoSetup();    // Setup of Servo
+  //ServoSetup();    // Setup of Servo
   init_adxl345();  // Setup of accel
   rxSetup();
 
@@ -131,6 +129,7 @@ void loop() {
     flightFlag = true;
     flightData();
   }
+  Serial.println(qw());
 
   // if (butt1.isClick()) {  // if button is clicked get acceleration error
   //   getAccel(&aGx, &aGy, &aGz);
