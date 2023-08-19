@@ -64,13 +64,6 @@ int ZPid(int error) {
   lastErrorZ = error;
   return constrain(int(up + ui + ud), 0, 180);
 }
-
-//expRunningAverage(&val, & filVal,k)
-void expRunningAverage(float *newVal, float *filVal, float k) {
-  *filVal += (*newVal - *filVal) * k;
-}
-
-
 /*
 
     Funcs for gps 
