@@ -6,25 +6,13 @@ int R = 2;
 #define iMin -0.4
 #define iMax 0.4
 
-//-Coef for the X angle------------------------------------------
-#define kPX 1
-#define kIX 0
-#define kDX 0
-float lastErrorX = 0;
-float iSum_X = 0;
-//-Coef for the Y angle------------------------------------------
-#define kPY 0.5
-#define kIY 0
-#define kDY 0
-float lastErrorY = 0;
-float iSum_Y = 0;
-//-Coef for the Z angle------------------------------------------
-#define kPZ 1
-#define kIZ 0
-#define kDZ 0
+
 float lastErrorZ = 0;
 float iSum_Z = 0;
-
+float lastErrorX = 0;
+float iSum_X = 0;
+float lastErrorY = 0;
+float iSum_Y = 0;
 
 //-Main math func are written here-----------------------------------------------------------
 float computePid(float error, float target, float kp) {  // Compute pid with error, target val and p coef.

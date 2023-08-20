@@ -28,7 +28,22 @@ float aGyError = 0.0;
 float rTx = 0.0;  // Target x angle
 float rTy = 0.0;  // Target y angle
 float rTz = 0.0;  // Target z angle
-float Ts = 0.0;   // Target speed
+
+//-Coef for the X angle------------------------------------------
+float kPX = 1;
+float kIX = 0;
+float kDX = 0;
+
+//-Coef for the Y angle------------------------------------------
+float kPY = 0.5;
+float kIY = 0;
+float kDY = 0;
+
+//-Coef for the Z angle------------------------------------------
+float kPZ = 1;
+float kIZ = 0;
+float kDZ = 0;
+
 
 
 float globalSpeed = 0;
@@ -49,7 +64,7 @@ void setup() {
 
   LedSetup();   //Setup of RGB led strip
   Gyrosetup();  // Setup of Gyroscope
-  //ServoSetup();    // Setup of Servo
+  //ServoSetup();    // Setup of Servonjjlk
   rxSetup();
 
   delay(1000);
