@@ -38,5 +38,32 @@ void getSig() {
     kPZ = (float)Income.Py / 1000;
     kIZ = (float)Income.Iy / 1000;
     kDZ = (float)Income.Dy / 1000;
+    Serial.print(rTx);
+    Serial.print("-");
+    Serial.print(rTy);
+    Serial.print("-");
+    Serial.print(rTz);
+    Serial.print("-");
+
+    Serial.print(kPX);
+    Serial.print("-");
+    Serial.print(kPY);
+    Serial.print("-");
+    Serial.print(kPZ);
+    Serial.print("-");
+
+    Serial.print(kIX);
+    Serial.print("-");
+    Serial.print(kIY);
+    Serial.print("-");
+    Serial.print(kIZ);
+    Serial.print("-");
+
+    Serial.print(kDX);
+    Serial.print("-");
+    Serial.print(kDY);
+    Serial.print("-");
+    Serial.print(kDZ);
+    Serial.print("-");
   }
 }

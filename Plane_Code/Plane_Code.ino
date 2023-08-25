@@ -11,7 +11,7 @@
 
 
 //Gyroscope is connected to pins  A4 and A5 relative to SDA and SCL on gyroscope
-//Accelerometer is connected to pins  A4 and A5 relative to SDA and SCL on Accelerometer
+
 
 //-Vals-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 float rGx = 0.0;  // Global X Angle
@@ -35,7 +35,7 @@ float kIX = 0;
 float kDX = 0;
 
 //-Coef for the Y angle------------------------------------------
-float kPY = 0.5;
+float kPY = 1;
 float kIY = 0;
 float kDY = 0;
 
@@ -100,4 +100,5 @@ void loop() {
     flightFlag = true;
     flightData();
   }
+  getSig();  // Get signal from ground
 }

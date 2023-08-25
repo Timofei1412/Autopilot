@@ -73,7 +73,7 @@ void loop() {
     }
     val[0] = constrain(val[0], -50, 50);
     val[1] = constrain(val[1], -30, 30);
-    val[2] = constrain(val[1], 0, 360);
+    val[2] = constrain(val[2], 0, 360);
   }
 
   Serial.print(mode);
