@@ -38,7 +38,7 @@
  
 
 ## Сборка проекта
-  - Закажите печатную плату.(Я советую заказывать (вот здесь)[https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100&stencilCounts=5])
+  - Закажите печатную плату.(Я советую заказывать [вот здесь](https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100&stencilCounts=5))
   > Если вы не собираете передатчик, то на схеме самолетной части не припаивайте приемник 433 Mгц. Самолет, в режиме автопилота, **будет удерживать те параметры, которые указаны в прошивке**!!!
 
 
