@@ -1,7 +1,5 @@
 #define Radius 10
 
-
-
 //-Main math func are written here-----------------------------------------------------------
 float computePid(float error, float target, float kp) {  // Compute pid with error, target val and p coef.
   float p = (target - error) * kp;
