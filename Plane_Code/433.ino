@@ -1,25 +1,6 @@
 #include <Gyver433.h>
 Gyver433_RX<Radio433Pin, 24> rx;  // указали пин и размер буфера
 
-struct data {
-  int roll;
-  int pitch;
-  int yaw;
-
-  int Pr;
-  int Ir;
-  int Dr;
-
-  int Pp;
-  int Ip;
-  int Dp;
-
-  int Py;
-  int Iy;
-  int Dy;
-};
-data Income;
-
 void getSig() {
   if (rx.tick() == 24) {
     rx.readData(Income);

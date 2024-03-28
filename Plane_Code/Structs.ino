@@ -4,18 +4,33 @@ struct point {
 };
 
 struct plane {
-  float x;
-  float y;
+  point XY;
   float heading;
   float altitude;
   float speed;
-};
+} Plane;
 
 struct line {
   float k;
   float b;
-  float x1;
-  float y1;
-  float x2;
-  float y2;
+  point PointA;
+  point PointB;
 };
+
+struct data {
+  int roll;
+  int pitch;
+  int yaw;
+
+  int Pr;
+  int Ir;
+  int Dr;
+
+  int Pp;
+  int Ip;
+  int Dp;
+
+  int Py;
+  int Iy;
+  int Dy;
+} Income;

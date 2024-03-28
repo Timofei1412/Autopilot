@@ -61,20 +61,18 @@ bool flightFlag = true;
 
 void setup() {
   Serial.begin(115200);  // Setup of main usb port for debug
-
   LedSetup();   //Setup of RGB led strip
   Gyrosetup();  // Setup of Gyroscope
-  //ServoSetup();    // Setup of Servonjjlk
+  ServoSetup();    // Setup of Servo
   rxSetup();
-
-  delay(1000);
+  delay(100);
 }
 
 
 //-Main code-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 void loop() {
-  servoTick();  // обязательная функция отработки. Должна постоянно опрашиваться
-
+  servoTick();  
+  doLight();
   if (Flight_mode() == 1) {  //if button controller set mode to autopilot straight
     autoPilot_on();
     if (flightFlag) {  // Do it one time
