@@ -51,8 +51,6 @@ float globalSpeed = 0;
 static uint32_t tmrM = 0;
 static uint32_t tmrSpd = 0;
 bool flightFlag = true;
-
-
 //-Main Setup-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #include "I2Cdev.h"
@@ -61,44 +59,34 @@ bool flightFlag = true;
 
 void setup() {
   Serial.begin(115200);  // Setup of main usb port for debug
-
   LedSetup();   //Setup of RGB led strip
   Gyrosetup();  // Setup of Gyroscope
-  //ServoSetup();    // Setup of Servonjjlk
+  ServoSetup();    // Setup of Servo
   rxSetup();
-
-  delay(1000);
+  delay(100);
+  // Get angle data and set the "0" z angle to current
+  getInfo(&rGx, &rGy, &rGz);
+  rTz = rGz;
 }
 
 
+void levelOff(){
+  if(millis()- tmr >= 10){
+    tmr = millis();
+    // Target x = 0; Target y = 0
+    getInfo(&rGx, &rGy, &rGz);
+    float x = computePid(rGx, 0, kPX);
+    float y = computePid(rGy, 0, kPY);
+    float z = computePid(rGz, rTz, kPZ);
+    angleWrite(x, y,z);
+  }
+}
+long long tmr = 0;
 //-Main code-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 void loop() {
-  servoTick();  // обязательная функция отработки. Должна постоянно опрашиваться
-
-  if (Flight_mode() == 1) {  //if button controller set mode to autopilot straight
-    autoPilot_on();
-    if (flightFlag) {  // Do it one time
-      // Get angle data and set the "0" z angle to current
-      getInfo(&rGx, &rGy, &rGz);
-      rTz = rGz;
-      flightFlag = false;
-    }
-    flyStraight();
-  } else if (Flight_mode() == 2) {  //if button controller set mode to autopilot task
-    autoPilot_on();
-    if (flightFlag) {  // Do it one time
-      // Get angle data and set the "0" z angle to current
-      getInfo(&rGx, &rGy, &rGz);
-      rTz = rGz;
-      flightFlag = false;
-    }
-
-    flyWithTask();
-
-  } else {  //if button controller set mode to manual
-    auto_off();
-    flightFlag = true;
-    flightData();
-  }
+  servoTick();  
+  doLight();
   getSig();  // Get signal from ground
+
+  levelOff();
 }

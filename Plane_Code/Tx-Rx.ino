@@ -1,4 +1,3 @@
-
 void rxSetup() {
   pinMode(A0, INPUT);
 }
