@@ -26,7 +26,7 @@ void LedSetup() {
 }
 //0-norm, 1-alarm, 2 - error
 void doLight() {
-  Serial.println(frec);
+  // Serial.println(frec);
   if (millis() - tmr >= frec) {
     state = !state;
     frec_counter++;
