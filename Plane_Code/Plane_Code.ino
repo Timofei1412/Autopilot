@@ -95,31 +95,21 @@ void setup() {
   Serial.begin(115200);  // Setup of main usb port for debug
   delay(4000);
   LedSetup();   //Setup of RGB led strip
-  // setupIMU();
   Gyrosetup();  // Setup of Gyroscope
   ServoSetup();    // Setup of Servo
   rxSetup();
   delay(100);
-  // Get angle data and set the "0" z angle to current
-  // getInfo(&rGx, &rGy, &rGz);
-  // rTz = rGz;
-  // readIMU();
 }
 long long flightTmr = 0;
 
 void levelOff(){
-  digitalWrite(13, 1);
   getInfo(&rGx, &rGy, &rGz);
-  // readIMU();
   debugPrint("x:", rGx, " y:", rGy, "z:", rGz);
   float x = Pitch.update(rGx, (millis() - flightTmr)/1000);
   float y = Roll.update(rGy, (millis() - flightTmr)/1000);
   float z = Yaw.update(rGz, (millis() - flightTmr)/1000);
 
-  //debugPrint("", x, "\t", y, "\t" , z);
-
   angleWrite(90 - y, 90 + x, 90 - z);
-  digitalWrite(13, 0);
   flightTmr = millis();
 }
 
